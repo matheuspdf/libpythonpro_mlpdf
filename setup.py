@@ -134,7 +134,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Framework :: Pytest",
     ],
-    install_requirements=[
+    install_requires=[
     'requests',
     ],
     zip_safe=False,
