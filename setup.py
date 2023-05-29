@@ -30,7 +30,7 @@ def find_package_data(
     exclude=standard_exclude,
     exclude_directories=standard_exclude_directories,
     only_in_packages=True,
-    show_ignored=False):
+        show_ignored=False):
     """
     Return a dictionary suitable for use in ``package_data``
     in a distutils ``setup.py`` file.
@@ -50,7 +50,7 @@ def find_package_data(
     be ignored; by default directories with leading ``.``, ``CVS``,
     and ``_darcs`` will be ignored.
 
-    If ``show_ignored`` is true, then all the files that aren"t
+    If ``show_ignored`` is true, then all the files that aren't
     included in package data are shown on stderr (for debugging
     purposes).
 
@@ -67,17 +67,16 @@ def find_package_data(
                 bad_name = False
                 for pattern in exclude_directories:
                     if (fnmatchcase(name, pattern)
-                        or fn.lower() == pattern.lower()):
+                            or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                "Directory %s ignored by pattern %s"
-                                % (fn, pattern))
+                            print("Directory %s ignored by pattern %s" %
+                                  (fn, pattern), file=sys.stderr)
                         break
                 if bad_name:
                     continue
                 if (os.path.isfile(os.path.join(fn, "__init__.py"))
-                    and not prefix):
+                        and not prefix):
                     if not package:
                         new_package = name
                     else:
@@ -90,26 +89,25 @@ def find_package_data(
                 bad_name = False
                 for pattern in exclude:
                     if (fnmatchcase(name, pattern)
-                        or fn.lower() == pattern.lower()):
+                            or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
-                                "File %s ignored by pattern %s"
-                                % (fn, pattern))
+                            print("File %s ignored by pattern %s" %
+                                  (fn, pattern), file=sys.stderr)
                         break
                 if bad_name:
                     continue
-                out.setdefault(package, []).append(prefix+name)
+                out.setdefault(package, []).append(prefix + name)
     return out
 
 
-PACKAGE = "libpythonpro" # nome do pacote
-NAME = PACKAGE # nome que será referenciado no "pip install"
-DESCRIPTION = "Módulo para exemplificar construção de projetos Python no curso PyTools" # descrição do projeto
-AUTHOR = "Matheus Lopes" # nome do autor
-AUTHOR_EMAIL = "matheuslopes.pdf@gmail.com" # e-mail do autor
-URL = "https://github.com/matheuspdf/libpythonpro" # URL do projeto no GitHub
-VERSION = __import__(PACKAGE).__version__ # investiga um __version__ no arquivo __init__.py contendo a versão
+PACKAGE = "libpythonpro_mlpdf"  # nome do pacote
+NAME = PACKAGE  # nome que será referenciado no "pip install"
+DESCRIPTION = "Módulo para exemplificar construção de projetos Python no curso PyTools"  # descrição do projeto
+AUTHOR = "Matheus Lopes"  # nome do autor
+AUTHOR_EMAIL = "matheuslopes.pdf@gmail.com"  # e-mail do autor
+URL = "https://github.com/matheuspdf/libpythonpro"  # URL do projeto no GitHub
+VERSION = __import__(PACKAGE).__version__  # investiga um __version__ no arquivo __init__.py contendo a versão
 
 
 # Link para a consulta dos classificadores: https://pypi.org/classifiers/
@@ -135,7 +133,7 @@ setup(
         "Framework :: Pytest",
     ],
     install_requires=[
-    'requests',
+        'requests',
     ],
     zip_safe=False,
 )

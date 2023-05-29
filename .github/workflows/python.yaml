@@ -25,4 +25,4 @@ jobs:
           python -m pip install -r requirements-dev.txt
 
       - name: Run Python Linter
-        run: flake8 libpythonpro/
+        run: flake8 libpythonpro_mlpdf/
