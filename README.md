@@ -5,6 +5,8 @@ Nesse curso é ensinado como contribuir com projetos de código aberto
 
 Link para o curso [Python Pro](https://pythonpro.com.br/)
 
+[![Lib Python](https://github.com/matheuspdf/libpythonpro_mlpdf/actions/workflows/python.yaml/badge.svg)](https://github.com/matheuspdf/libpythonpro_mlpdf/actions/workflows/python.yaml)
+
 
 [![Lib Python](https://github.com/matheuspdf/libpythonpro_mlpdf/actions/workflows/python.yaml/badge.svg)](https://github.com/matheuspdf/libpythonpro_mlpdf/actions/workflows/python.yaml)
 
