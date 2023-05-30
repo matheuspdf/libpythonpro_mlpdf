@@ -1,22 +1,24 @@
 name: Lib Python
 
 on:
-  push:
-    branches: [main]
   pull_request:
-    branches: [main]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
+    env:
+      PIPENV_NO_INHERIT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Python
-        uses: actions/setup-python@v3
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: '3.10'
           cache: pip
 
       - name: Install dependencies
@@ -27,10 +29,11 @@ jobs:
       - name: Run Python Linter
         run: flake8 libpythonpro_mlpdf/
 
-      - name: Run Pytest
-        run: pytest libpythonpro_mlpdf/tests
-
-      - name: Upload coverage reports to Codecov
+      - name: Test with pytest
+        run: |
+          pipenv run pytest libpythonpro_mlpdf --cov=libpythonpro_mlpdf --cov-report=xml --cov-report=term
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
-        env:
-            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
