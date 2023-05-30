@@ -26,3 +26,6 @@ jobs:
 
       - name: Run Python Linter
         run: flake8 libpythonpro_mlpdf/
+
+      - name: Run Pytest
+        run: pytest libpythonpro_mlpdf/tests
