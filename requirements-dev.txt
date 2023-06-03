@@ -16,7 +16,7 @@ coverage==7.2.7
 pytest-cov==4.1.0
 
 #Pipenv
-pipenv==2023.5.19
+pipenv==2023.6.2
 virtualenv-clone>=0.2.5
 virtualenv>=20.17.1
 platformdirs<4,>=3.2
