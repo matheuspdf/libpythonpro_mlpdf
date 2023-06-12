@@ -23,4 +23,7 @@ platformdirs<4,>=3.2
 filelock<4,>=3.11
 distlib<1,>=0.3.6
 
+pytest-mock==3.10.0
+
+
 -r requirements.txt
