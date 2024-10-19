@@ -1,48 +1,78 @@
-# libpythonpro
+# libpythonpro-mlpdf
 Este README tem como propósito registrar e documentar os conceitos aprendidos durante o Curso Pytools da comunidade DevPro.
-
-Link para o curso [Python Pro](https://pythonpro.com.br/)
-
-
-<br>
 
 [![Lib Python](https://github.com/matheuspdf/libpythonpro_mlpdf/actions/workflows/python.yaml/badge.svg)](https://github.com/matheuspdf/libpythonpro_mlpdf/actions/workflows/python.yaml) [![codecov](https://codecov.io/gh/matheuspdf/libpythonpro_mlpdf/branch/main/graph/badge.svg?token=0TT2NUN8W0)](https://codecov.io/gh/matheuspdf/libpythonpro_mlpdf)
 
-Suportada versão 3 de Python
+![Version](https://img.shields.io/pypi/v/libpythonpro-mlpdf)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-Para instalar:
 
-```console
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements-dev.txt
+**libpythonpro-mlpdf** é uma biblioteca Python disponível no [PyPI](https://pypi.org/), projetada para facilitar a busca e recuperação do avatar de qualquer usuário do GitHub. Com esta biblioteca, você pode acessar rapidamente as imagens de perfil dos usuários do GitHub utilizando apenas o nome de usuário.
+
+## Instalação
+
+Instale a biblioteca usando o gerenciador de pacotes `pip`:
+
+```bash
+pip install libpythonpro-mlpdf
 ```
 
-Para conferir qualidade de código:
-```console
-flake8
-```
+## Como Usar
 
+Siga estes passos simples:
 
-## Obetivos desde módulo:
+1. **Criar um Ambiente Virtual**:
 
-1. Como contribuir com projetos de código aberto.
-2. Criar um ambiente de desenvolvimento que auxilie na criação de soluções.
-3. Possibilitar que o desenvolvedor faça o mínimo de intervenções manuais.
-<br>
+   ```bash
+   python -m venv venv
+   ```
 
-# Módulos do curso
->## Git - Afiando o Machado
-> * **Criação de Repositório:** A criação de um repositório é o ponto de partida para o controle de versão usando o Git, onde todos os arquivos e histórico de alterações são armazenados.
->
-> * **Chaves SSH:** As chaves SSH são uma forma segura de autenticação para acessar repositórios remotos, permitindo conexões criptografadas sem digitar senhas repetidamente.
-> 
-> * **Feature Branch:** Uma ramificação separada do repositório principal usada para desenvolver e testar novos recursos sem interferir no código estável, favorecendo a organização e a colaboração.
-> 
-> * **Resolução de Conflito no Git:** Ocorre quando diferentes ramificações têm alterações conflitantes no mesmo trecho de código. É necessário analisar, tomar decisões e combinar cuidadosamente as alterações para preservar a integridade do projeto.
-> 
-> * **Arquivo Gitignore:** Um arquivo que especifica quais arquivos e diretórios devem ser ignorados pelo Git, evitando o rastreamento de arquivos desnecessários ou gerados automaticamente.
-> 
-> * **Fork:** Uma cópia independente de um repositório remoto criada na sua conta pessoal, permitindo que você contribua com alterações sem afetar o repositório principal, comumente usado em projetos de código aberto.
-> 
-> * **Pull Request:** Uma solicitação para mesclar as alterações de um branch de recurso na branch principal do repositório, possibilitando revisão, feedback e, se aprovado, a integração das alterações no repositório principal.
+2. **Ativar o Ambiente Virtual**:
+
+   - **Windows**:
+
+     ```bash
+     venv\Scripts\activate
+     ```
+
+   - **macOS e Linux**:
+
+     ```bash
+     source venv/bin/activate
+     ```
+
+3. **Instalar a Biblioteca**:
+
+   ```bash
+   pip install libpythonpro-mlpdf
+   ```
+
+4. **Iniciar o Console do Python**:
+
+   ```bash
+   python
+   ```
+
+5. **Buscar o Avatar**:
+
+   Execute os seguintes comandos:
+
+   ```python
+   from libpythonpro_mlpdf.github_api import buscar_avatar
+   avatar_url = buscar_avatar("matheuspdf")  # Exemplo com meu usuário
+   ```
+
+### Exemplo de Saída
+
+O comando acima retorna um link para o seu avatar:
+
+**Saída:** 
+['https://avatars.githubusercontent.com/u/96511087?v=4'](https://avatars.githubusercontent.com/u/96511087?v=4)
+
+[![Avatar do GitHub](https://avatars.githubusercontent.com/u/96511087?v=4)](https://avatars.githubusercontent.com/u/96511087?v=4)
+
+Clique na imagem ou no link para visualizar o seu avatar.
+
+## Licença
+
+Este projeto é licenciado sob a [MIT License](LICENSE).
